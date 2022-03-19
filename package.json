@@ -1,0 +1,21 @@
+{
+  "name": "grabushka-cookies",
+  "description": "Pre-built Grabushka Cookies Parser files.",
+  "authors": "mertushka",
+  "version": "1.0.0",
+  "main": "bin/grabushka-cookies.js",
+  "bin": {
+    "grabuska-cookie": "./bin/grabushka-cookie.js"
+  },
+  "scripts": {
+    "build": "npm run build-pkg",
+    "build-pkg": "pkg -t node16-win-x64,node16-linux-x64,node16-macos-x64 --out-path build .",
+    "build-windows": "nexe -t windows-x86-14.15.3 bin/grabushka-cookies.js -o build/grabushka-cookies.exe",
+    "build-linux": "nexe -t linux-x64-14.15.3 bin/grabushka-cookies.js -o build/grabushka-cookies",
+    "build-macos": "nexe -t macos-x64-14.15.3 bin/grabushka-cookies.js -o build/grabushka-cookies"
+  },
+  "devDependencies": {
+    "nexe": "^4.0.0-beta.19",
+    "pkg": "^5.5.2"
+  }
+}
